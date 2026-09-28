@@ -17,32 +17,44 @@ import SystemHealth from './pages/SystemHealth'
 import Architecture from './pages/Architecture'
 import About from './pages/About'
 import LiveNews from './pages/LiveNews'
+import { useAppStore } from './store/appStore'
+
+// ── Guards ─────────────────────────────────────────────────────────────────────
+function AdminRoute({ children }) {
+  const role = useAppStore(s => s.role)
+  return role === 'admin' ? children : <Navigate to="/home" replace />
+}
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Standalone pages */}
+        {/* Public pages */}
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
 
-        {/* App with sidebar/navbar layout */}
+        {/* App — authenticated layout */}
         <Route element={<AppLayout />}>
+
+          {/* ── SHARED: both user & admin ── */}
           <Route path="/home" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/map" element={<LiveMap />} />
-          <Route path="/reports" element={<Reports />} />
-          <Route path="/reports/:id" element={<ReportDetail />} />
           <Route path="/events" element={<Events />} />
           <Route path="/events/:id" element={<EventDetail />} />
-          <Route path="/report" element={<CitizenReport />} />
-          <Route path="/analytics" element={<Analytics />} />
-          <Route path="/verification" element={<Verification />} />
-          <Route path="/admin" element={<AdminPanel />} />
-          <Route path="/system" element={<SystemHealth />} />
-          <Route path="/architecture" element={<Architecture />} />
+          <Route path="/reports" element={<Reports />} />
+          <Route path="/reports/:id" element={<ReportDetail />} />
           <Route path="/live-news" element={<LiveNews />} />
+          <Route path="/report" element={<CitizenReport />} />
           <Route path="/about" element={<About />} />
+
+          {/* ── ADMIN ONLY ── */}
+          <Route path="/dashboard" element={<AdminRoute><Dashboard /></AdminRoute>} />
+          <Route path="/analytics" element={<AdminRoute><Analytics /></AdminRoute>} />
+          <Route path="/verification" element={<AdminRoute><Verification /></AdminRoute>} />
+          <Route path="/admin" element={<AdminRoute><AdminPanel /></AdminRoute>} />
+          <Route path="/system" element={<AdminRoute><SystemHealth /></AdminRoute>} />
+          <Route path="/architecture" element={<AdminRoute><Architecture /></AdminRoute>} />
+
           {/* Catch-all */}
           <Route path="*" element={<Navigate to="/home" replace />} />
         </Route>

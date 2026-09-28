@@ -2,15 +2,15 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAppStore } from '../store/appStore'
 import {
-    Search, Bell, Play, Square, RefreshCw, ChevronDown,
-    AlertTriangle, CheckCircle, Info, Zap
+    Search, Bell, Play, Square, RefreshCw,
+    AlertTriangle, CheckCircle, Info, User, Shield
 } from 'lucide-react'
 
 export default function Navbar() {
     const navigate = useNavigate()
     const {
         wsConnected, demoMode, setDemoMode, notifications,
-        markNotificationRead, stats
+        markNotificationRead, stats, role
     } = useAppStore()
     const [searchVal, setSearchVal] = useState('')
     const [showNotif, setShowNotif] = useState(false)
@@ -36,10 +36,22 @@ export default function Navbar() {
             height: 56, background: '#f1f5f9', borderBottom: '1px solid rgba(0,0,0,0.08)',
             display: 'flex', alignItems: 'center', paddingInline: 20, gap: 16, flexShrink: 0, zIndex: 99
         }}>
-            {/* Brand */}
-            <div style={{ display: 'flex', flexDirection: 'column', minWidth: 120 }}>
-                <span style={{ fontSize: 13, fontWeight: 700, color: '#0f172a' }}>VayuNetra</span>
-                <span style={{ fontSize: 9, color: '#94a3b8', letterSpacing: '0.05em' }}>NATIONAL WEATHER INTELLIGENCE</span>
+            {/* Brand + role */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, minWidth: 140 }}>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <span style={{ fontSize: 13, fontWeight: 700, color: '#0f172a', lineHeight: 1 }}>VayuNetra</span>
+                    <span style={{ fontSize: 9, color: '#94a3b8', letterSpacing: '0.05em' }}>WEATHER INTELLIGENCE</span>
+                </div>
+                <div style={{
+                    display: 'flex', alignItems: 'center', gap: 4, padding: '3px 9px',
+                    borderRadius: 20, fontSize: 10, fontWeight: 700,
+                    background: role === 'admin' ? 'rgba(139,92,246,0.1)' : 'rgba(59,130,246,0.1)',
+                    border: `1px solid ${role === 'admin' ? 'rgba(139,92,246,0.25)' : 'rgba(59,130,246,0.25)'}`,
+                    color: role === 'admin' ? '#8b5cf6' : '#3b82f6',
+                }}>
+                    {role === 'admin' ? <Shield size={10} /> : <User size={10} />}
+                    {role === 'admin' ? 'ADMIN' : 'USER'}
+                </div>
             </div>
 
             {/* Search */}
@@ -85,22 +97,23 @@ export default function Navbar() {
                 <span>Updated {lastUpdated}</span>
             </div>
 
-            {/* Demo mode toggle */}
-            <button
-                onClick={() => setDemoMode(!demoMode)}
-                style={{
-                    display: 'flex', alignItems: 'center', gap: 6, paddingInline: 12, paddingBlock: 6,
-                    borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 12, fontWeight: 600,
-                    background: demoMode ? 'rgba(239,68,68,0.15)' : 'rgba(59,130,246,0.15)',
-                    color: demoMode ? '#ef4444' : '#3b82f6',
-                    border: `1px solid ${demoMode ? 'rgba(239,68,68,0.3)' : 'rgba(59,130,246,0.3)'}`,
-                    fontFamily: 'Inter, sans-serif',
-                    transition: 'all 0.2s',
-                }}
-            >
-                {demoMode ? <Square size={12} /> : <Play size={12} />}
-                {demoMode ? 'Stop Demo' : 'Demo Mode'}
-            </button>
+            {/* Demo mode toggle — admin only */}
+            {role === 'admin' && (
+                <button
+                    onClick={() => setDemoMode(!demoMode)}
+                    style={{
+                        display: 'flex', alignItems: 'center', gap: 6, paddingInline: 12, paddingBlock: 6,
+                        borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 12, fontWeight: 600,
+                        background: demoMode ? 'rgba(239,68,68,0.15)' : 'rgba(59,130,246,0.15)',
+                        color: demoMode ? '#ef4444' : '#3b82f6',
+                        border: `1px solid ${demoMode ? 'rgba(239,68,68,0.3)' : 'rgba(59,130,246,0.3)'}`,
+                        fontFamily: 'Inter, sans-serif', transition: 'all 0.2s',
+                    }}
+                >
+                    {demoMode ? <Square size={12} /> : <Play size={12} />}
+                    {demoMode ? 'Stop Demo' : 'Demo Mode'}
+                </button>
+            )}
 
             {/* Notifications */}
             <div style={{ position: 'relative' }}>

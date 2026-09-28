@@ -24,6 +24,10 @@ export const useAppStore = create((set, get) => ({
         search: '',
     },
 
+    // Auth / Role
+    role: 'user',   // 'user' | 'admin'
+    setRole: (val) => set({ role: val }),
+
     // UI State
     demoMode: false,
     demoScenarioRunning: false,
@@ -104,6 +108,7 @@ export const useAppStore = create((set, get) => ({
     setSidebarOpen: (val) => set({ sidebarOpen: val }),
     setSelectedEvent: (ev) => set({ selectedEvent: ev }),
     setSelectedReport: (r) => set({ selectedReport: r }),
+    setRole: (val) => set({ role: val }),
 
     markNotificationRead: (id) => set(state => ({
         notifications: state.notifications.map(n => n.id === id ? { ...n, read: true } : n)
