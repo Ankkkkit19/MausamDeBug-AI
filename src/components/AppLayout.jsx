@@ -5,6 +5,7 @@ import { useAppStore } from '../store/appStore'
 import { useEffect } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import DemoModePanel from './DemoModePanel'
+import SOSSystem from './SOSSystem'
 
 export default function AppLayout() {
     const { demoMode, wsConnected, setWsConnected, addReport, addNotification, stats, loadData } = useAppStore()
@@ -93,6 +94,7 @@ export default function AppLayout() {
             </div>
             {demoMode && <DemoModePanel />}
             <Toaster position="bottom-right" />
+            <SOSSystem isMobile={true} />
         </div>
     )
 }
