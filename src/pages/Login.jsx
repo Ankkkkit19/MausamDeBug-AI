@@ -13,8 +13,8 @@ export default function Login() {
     const navigate = useNavigate()
     const { setRole } = useAppStore()
 
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [email, setEmail] = useState(ACCOUNTS.user.email)
+    const [password, setPassword] = useState(ACCOUNTS.user.password)
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState('')
     const [selected, setSelected] = useState('user')   // which tile is highlighted
