@@ -67,7 +67,7 @@ export default function Home() {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 24 }}>
                 <div>
                     <h1 style={{ fontSize: 28, fontWeight: 800, color: '#0f172a', margin: '0 0 4px', display: 'flex', gap: 10, alignItems: 'center' }}>
-                        Good Morning, Ananya 👋
+                        Welcome 👋
                     </h1>
                     <p style={{ fontSize: 15, color: '#64748b', margin: 0 }}>Here's your weather and safety update for today</p>
                 </div>
