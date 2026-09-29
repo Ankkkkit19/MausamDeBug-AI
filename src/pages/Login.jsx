@@ -12,6 +12,9 @@ const ACCOUNTS = {
 export default function Login() {
     const navigate = useNavigate()
     const { setRole } = useAppStore()
+    const queryParams = new URLSearchParams(window.location.search)
+    const [isRegister, setIsRegister] = useState(queryParams.get('mode') === 'register')
+    const [name, setName] = useState('')
 
     const [email, setEmail] = useState(ACCOUNTS.user.email)
     const [password, setPassword] = useState(ACCOUNTS.user.password)
@@ -21,25 +24,40 @@ export default function Login() {
 
     // Prefill credentials when tile is clicked
     const selectRole = (role) => {
+        if (isRegister) return
         setSelected(role)
         setEmail(ACCOUNTS[role].email)
         setPassword(ACCOUNTS[role].password)
         setError('')
     }
 
-    const handleLogin = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
         setError('')
-        const match = Object.values(ACCOUNTS).find(
-            a => a.email === email.trim() && a.password === password
-        )
-        if (!match) { setError('Invalid credentials. Use the quick-login tiles above.'); return }
-        setIsLoading(true)
-        setTimeout(() => {
-            setRole(match.role)
-            setIsLoading(false)
-            navigate('/home')
-        }, 900)
+
+        if (isRegister) {
+            if (!name.trim() || !email.trim() || !password) {
+                setError('Please fill out all fields.')
+                return
+            }
+            setIsLoading(true)
+            setTimeout(() => {
+                setRole('user') // Register defaults to user
+                setIsLoading(false)
+                navigate('/home')
+            }, 1200)
+        } else {
+            const match = Object.values(ACCOUNTS).find(
+                a => a.email === email.trim() && a.password === password
+            )
+            if (!match) { setError('Invalid credentials. Use the quick-login tiles above.'); return }
+            setIsLoading(true)
+            setTimeout(() => {
+                setRole(match.role)
+                setIsLoading(false)
+                navigate('/home')
+            }, 900)
+        }
     }
 
     return (
@@ -65,34 +83,52 @@ export default function Login() {
                     <div style={{ width: 56, height: 56, borderRadius: 16, background: 'rgba(59,130,246,0.1)', border: '1px solid rgba(59,130,246,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 18px', color: '#3b82f6' }}>
                         <ShieldCheck size={28} />
                     </div>
-                    <h1 style={{ fontSize: 26, fontWeight: 800, color: '#0f172a', margin: '0 0 6px' }}>Welcome Back</h1>
-                    <p style={{ fontSize: 14, color: '#64748b', margin: 0 }}>Select your role to continue</p>
+                    <h1 style={{ fontSize: 26, fontWeight: 800, color: '#0f172a', margin: '0 0 6px' }}>{isRegister ? 'Create an Account' : 'Welcome Back'}</h1>
+                    <p style={{ fontSize: 14, color: '#64748b', margin: 0 }}>{isRegister ? 'Join India\'s Weather Intelligence Platform' : 'Select your role to continue'}</p>
                 </div>
 
                 {/* Role tiles */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 24 }}>
-                    <RoleTile
-                        icon={<User size={22} />}
-                        title="User"
-                        sub="View weather, alerts & map"
-                        color="#3b82f6"
-                        active={selected === 'user'}
-                        onClick={() => selectRole('user')}
-                    />
-                    <RoleTile
-                        icon={<ShieldCheck size={22} />}
-                        title="Admin"
-                        sub="Manage reports & verification"
-                        color="#8b5cf6"
-                        active={selected === 'admin'}
-                        onClick={() => selectRole('admin')}
-                    />
-                </div>
+                {!isRegister && (
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 24 }}>
+                        <RoleTile
+                            icon={<User size={22} />}
+                            title="User"
+                            sub="View weather, alerts & map"
+                            color="#3b82f6"
+                            active={selected === 'user'}
+                            onClick={() => selectRole('user')}
+                        />
+                        <RoleTile
+                            icon={<ShieldCheck size={22} />}
+                            title="Admin"
+                            sub="Manage reports & verification"
+                            color="#8b5cf6"
+                            active={selected === 'admin'}
+                            onClick={() => selectRole('admin')}
+                        />
+                    </div>
+                )}
 
                 {/* Card */}
                 <div style={{ background: '#ffffff', border: '1px solid rgba(0,0,0,0.08)', borderRadius: 24, padding: '32px 36px', boxShadow: '0 20px 50px rgba(0,0,0,0.06)' }}>
 
-                    <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+                    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
+                        {/* Name (for register only) */}
+                        {isRegister && (
+                            <div>
+                                <label style={labelSt}>Full Name</label>
+                                <div style={{ position: 'relative' }}>
+                                    <User size={16} style={{ position: 'absolute', left: 13, top: '50%', transform: 'translateY(-50%)', color: '#94a3b8' }} />
+                                    <input
+                                        type="text" value={name} onChange={e => setName(e.target.value)}
+                                        placeholder="Arjun Verma" required
+                                        style={inputSt}
+                                        onFocus={e => { e.target.style.borderColor = '#3b82f6'; e.target.style.boxShadow = '0 0 0 3px rgba(59,130,246,0.12)' }}
+                                        onBlur={e => { e.target.style.borderColor = 'rgba(0,0,0,0.1)'; e.target.style.boxShadow = 'none' }}
+                                    />
+                                </div>
+                            </div>
+                        )}
                         {/* Email */}
                         <div>
                             <label style={labelSt}>Email Address</label>
@@ -136,16 +172,40 @@ export default function Login() {
                         {/* Submit */}
                         <button type="submit" disabled={isLoading} style={{
                             marginTop: 4, padding: '13px', borderRadius: 12, border: 'none', cursor: isLoading ? 'not-allowed' : 'pointer',
-                            background: selected === 'admin' ? 'linear-gradient(135deg,#8b5cf6,#6366f1)' : 'linear-gradient(135deg,#3b82f6,#06b6d4)',
+                            background: (!isRegister && selected === 'admin') ? 'linear-gradient(135deg,#8b5cf6,#6366f1)' : 'linear-gradient(135deg,#3b82f6,#06b6d4)',
                             color: '#fff', fontSize: 15, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
                             fontFamily: 'Inter, sans-serif', boxShadow: '0 4px 14px rgba(59,130,246,0.3)', opacity: isLoading ? 0.8 : 1, transition: 'all 0.2s',
                         }}>
-                            {isLoading ? 'Signing in...' : <>{selected === 'admin' ? '🛡 Admin Login' : '👤 User Login'} <ArrowRight size={15} /></>}
+                            {isLoading ? 'Processing...' : <>{isRegister ? 'Register Account' : (!isRegister && selected === 'admin' ? '🛡 Admin Login' : '👤 User Login')} <ArrowRight size={15} /></>}
                         </button>
 
-                        <div style={{ textAlign: 'center', fontSize: 11, color: '#94a3b8' }}>
-                            Demo mode — credentials are prefilled when you click a role tile above.
+                        <div style={{ textAlign: 'center', fontSize: 13, color: '#64748b', marginTop: 8 }}>
+                            {isRegister ? "Already have an account? " : "Don't have an account? "}
+                            <span
+                                onClick={() => {
+                                    setIsRegister(!isRegister);
+                                    setError('');
+                                    if (isRegister) {
+                                        // switching to login, preset demo creds
+                                        setEmail(ACCOUNTS.user.email);
+                                        setPassword(ACCOUNTS.user.password);
+                                        setSelected('user');
+                                    } else {
+                                        // switching to register, clear creds
+                                        setEmail('');
+                                        setPassword('');
+                                    }
+                                }}
+                                style={{ color: '#3b82f6', fontWeight: 600, cursor: 'pointer' }}>
+                                {isRegister ? 'Login' : 'Sign Up'}
+                            </span>
                         </div>
+
+                        {!isRegister && (
+                            <div style={{ textAlign: 'center', fontSize: 11, color: '#94a3b8' }}>
+                                Demo mode — credentials are prefilled when you click a role tile above.
+                            </div>
+                        )}
                     </form>
                 </div>
 

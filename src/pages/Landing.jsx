@@ -56,8 +56,8 @@ export default function Landing() {
                     </div>
                     {/* SOS Desktop */}
                     <SOSSystem isMobile={false} />
-                    <button onClick={() => navigate('/login')} style={{ border: '1px solid #e2e8f0', background: '#fff', padding: '8px 16px', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer', color: '#0f172a' }}>Login</button>
-                    <button onClick={() => navigate('/login')} style={{ border: 'none', background: '#3b82f6', color: '#fff', padding: '8px 16px', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>Sign Up</button>
+                    <button onClick={() => navigate('/login')} style={{ border: '1px solid #e2e8f0', background: '#fff', padding: '8px 16px', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer', color: '#0f172a', whiteSpace: 'nowrap' }}>Login</button>
+                    <button onClick={() => navigate('/login?mode=register')} style={{ border: 'none', background: '#3b82f6', color: '#fff', padding: '8px 16px', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap' }}>Sign Up</button>
                 </div>
 
                 {/* Mobile Menu Icon */}
@@ -79,7 +79,8 @@ export default function Landing() {
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 20, fontSize: 16, fontWeight: 600, marginBottom: 30 }}>
                         {['Home', 'Forecast', 'Map', 'Events', 'Insights'].map(i => <div key={i}>{i}</div>)}
                     </div>
-                    <button onClick={() => navigate('/login')} style={{ width: '100%', padding: 14, background: '#3b82f6', color: '#fff', borderRadius: 10, fontWeight: 700, border: 'none', marginBottom: 12 }}>Sign In / Register</button>
+                    <button onClick={() => navigate('/login')} style={{ width: '100%', padding: 14, background: '#f1f5f9', color: '#0f172a', borderRadius: 10, fontWeight: 700, border: 'none', marginBottom: 12 }}>Login</button>
+                    <button onClick={() => navigate('/login?mode=register')} style={{ width: '100%', padding: 14, background: '#3b82f6', color: '#fff', borderRadius: 10, fontWeight: 700, border: 'none', marginBottom: 12 }}>Sign Up</button>
                     <button onClick={() => navigate('/dashboard')} style={{ width: '100%', padding: 14, background: '#f1f5f9', color: '#0f172a', borderRadius: 10, fontWeight: 700, border: 'none' }}>Get Started</button>
                 </div>
             )}
