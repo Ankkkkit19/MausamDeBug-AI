@@ -92,7 +92,7 @@ export default function Landing() {
                 </div>
 
                 {/* CTA */}
-                <button onClick={() => navigate('/dashboard')} style={{
+                <button onClick={() => navigate('/login')} style={{
                     padding: '8px 22px', borderRadius: 10, border: 'none', cursor: 'pointer',
                     background: 'linear-gradient(135deg,#3b82f6,#06b6d4)', color: '#fff',
                     fontSize: 13, fontWeight: 700, boxShadow: '0 4px 15px rgba(59,130,246,0.35)',
@@ -101,7 +101,7 @@ export default function Landing() {
                     onMouseEnter={e => { e.target.style.transform = 'translateY(-1px)'; e.target.style.boxShadow = '0 6px 20px rgba(59,130,246,0.5)' }}
                     onMouseLeave={e => { e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = '0 4px 15px rgba(59,130,246,0.35)' }}
                 >
-                    Download App
+                    Sign In
                 </button>
             </nav>
 
@@ -139,10 +139,30 @@ export default function Landing() {
                             MausamDeBug is an AI-powered National Weather Big Data Analytics Platform that brings together weather information from multiple sources and transforms fragmented data into reliable, meaningful, and actionable intelligence.
                         </p>
 
-                        {/* Store Badges */}
+                        {/* CTAs */}
                         <div style={{ display: 'flex', gap: 16, marginBottom: 40 }}>
-                            <StoreBadge store="google" onClick={() => navigate('/dashboard')} />
-                            <StoreBadge store="apple" onClick={() => navigate('/dashboard')} />
+                            <button onClick={() => navigate('/login')} style={{
+                                padding: '12px 28px', borderRadius: 12, border: 'none', cursor: 'pointer',
+                                background: 'linear-gradient(135deg,#3b82f6,#06b6d4)', color: '#fff',
+                                fontSize: 15, fontWeight: 800, boxShadow: '0 8px 25px rgba(59,130,246,0.4)',
+                                transition: 'all 0.2s',
+                            }}
+                                onMouseEnter={e => e.target.style.transform = 'translateY(-2px)'}
+                                onMouseLeave={e => e.target.style.transform = 'translateY(0)'}
+                            >
+                                Login to Platform
+                            </button>
+                            <button onClick={() => navigate('/dashboard')} style={{
+                                padding: '12px 28px', borderRadius: 12, border: '1px solid rgba(255,255,255,0.2)',
+                                cursor: 'pointer', background: 'rgba(255,255,255,0.05)', color: '#fff',
+                                fontSize: 15, fontWeight: 800, backdropFilter: 'blur(10px)',
+                                transition: 'all 0.2s',
+                            }}
+                                onMouseEnter={e => e.target.style.background = 'rgba(255,255,255,0.1)'}
+                                onMouseLeave={e => e.target.style.background = 'rgba(255,255,255,0.05)'}
+                            >
+                                View Demo
+                            </button>
                         </div>
 
                         {/* Trust Row */}
@@ -254,7 +274,7 @@ export default function Landing() {
                 <div style={{ maxWidth: 1200, margin: '0 auto' }}>
                     <div style={{ textAlign: 'center', marginBottom: 60 }}>
                         <div style={badgePill}>EXPLORE FEATURES</div>
-                        <h2 style={{ fontSize: 44, fontWeight: 900, letterSpacing: '-0.03em', marginTop: 16, color: '#fff' }}>Everything You Need in One App</h2>
+                        <h2 style={{ fontSize: 44, fontWeight: 900, letterSpacing: '-0.03em', marginTop: 16, color: '#fff' }}>Everything You Need in One Platform</h2>
                         <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.5)', marginTop: 12, maxWidth: 600, margin: '12px auto 0' }}>
                             From real-time weather to AI insights and event alerts — MausamDeBug keeps you informed and prepared.
                         </p>
@@ -356,7 +376,7 @@ export default function Landing() {
                 </div>
             </section>
 
-            {/* ── DOWNLOAD CTA ── */}
+            {/* ── GET STARTED CTA ── */}
             <section style={{
                 padding: '100px 60px',
                 background: 'linear-gradient(135deg,#0f1a3a 0%,#0a1628 60%,#0a0e1a 100%)',
@@ -367,14 +387,23 @@ export default function Landing() {
                 <div style={{ position: 'absolute', top: '20%', right: '15%', width: 250, height: 250, borderRadius: '50%', background: 'rgba(6,182,212,0.06)', filter: 'blur(60px)' }} />
                 <div style={{ position: 'relative', zIndex: 1 }}>
                     <h2 style={{ fontSize: 44, fontWeight: 900, letterSpacing: '-0.03em', marginBottom: 16, color: '#fff' }}>
-                        Download MausamDeBug Today
+                        Access MausamDeBug Today
                     </h2>
                     <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.55)', marginBottom: 40, maxWidth: 500, margin: '0 auto 40px' }}>
                         Be informed. Be prepared. Stay ahead with AI-powered weather intelligence.
                     </p>
                     <div style={{ display: 'flex', gap: 20, justifyContent: 'center', marginBottom: 16 }}>
-                        <StoreBadge store="google" onClick={() => navigate('/dashboard')} large />
-                        <StoreBadge store="apple" onClick={() => navigate('/dashboard')} large />
+                        <button onClick={() => navigate('/login')} style={{
+                            padding: '16px 36px', borderRadius: 14, border: 'none', cursor: 'pointer',
+                            background: 'linear-gradient(135deg,#3b82f6,#06b6d4)', color: '#fff',
+                            fontSize: 16, fontWeight: 800, boxShadow: '0 8px 25px rgba(59,130,246,0.4)',
+                            transition: 'all 0.2s',
+                        }}
+                            onMouseEnter={e => e.target.style.transform = 'translateY(-2px)'}
+                            onMouseLeave={e => e.target.style.transform = 'translateY(0)'}
+                        >
+                            Sign In to Dashboard
+                        </button>
                     </div>
                 </div>
             </section>
