@@ -12,8 +12,8 @@ export default function About() {
         <div style={{ padding: 24, maxWidth: 1000 }}>
             {/* Hero */}
             <div style={{ textAlign: 'center', marginBottom: 48, padding: '40px 24px' }}>
-                <div style={{ fontSize: 48, marginBottom: 16 }}>🌬️</div>
-                <h1 style={{ fontSize: 32, fontWeight: 900, color: '#0f172a', margin: '0 0 8px' }}>VayuNetra</h1>
+                <div style={{ width: 64, height: 64, borderRadius: 16, background: 'linear-gradient(135deg, #3b82f6, #06b6d4)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24, color: '#fff', fontWeight: 'bold', margin: '0 auto 16px', boxShadow: '0 8px 24px rgba(59,130,246,0.4)' }}>☁️/&gt;</div>
+                <h1 style={{ fontSize: 32, fontWeight: 900, color: '#0f172a', margin: '0 0 8px' }}>MausamDeBug</h1>
                 <div style={{ fontSize: 16, color: '#64748b', marginBottom: 16 }}>National Weather Intelligence, Verification & Situational Awareness Platform</div>
                 <div style={{ display: 'flex', justifyContent: 'center', gap: 12 }}>
                     <span style={{ padding: '4px 14px', borderRadius: 999, background: 'rgba(59,130,246,0.15)', border: '1px solid rgba(59,130,246,0.3)', fontSize: 12, color: '#60a5fa', fontWeight: 600 }}>Data Platform</span>
@@ -35,7 +35,7 @@ export default function About() {
             <div style={{ ...card, marginTop: 16 }}>
                 <div style={{ fontWeight: 700, fontSize: 16, color: '#0f172a', marginBottom: 10 }}>💡 The Solution</div>
                 <div style={{ fontSize: 14, color: '#475569', lineHeight: 1.8 }}>
-                    VayuNetra creates a centralized intelligence layer that automatically <strong style={{ color: '#0f172a' }}>collects weather data from
+                    MausamDeBug creates a centralized intelligence layer that automatically <strong style={{ color: '#0f172a' }}>collects weather data from
                         multiple sources, extracts structured information using NLP, estimates report credibility using multi-source evidence,
                         detects duplicates via semantic similarity, and correlates reports into unified weather events</strong>.
                     The result is a clean, verified, geospatially-aware weather intelligence feed.
@@ -72,7 +72,7 @@ export default function About() {
             <div style={{ ...card, marginTop: 20, background: 'rgba(59,130,246,0.05)', borderColor: 'rgba(59,130,246,0.2)' }}>
                 <div style={{ fontWeight: 700, fontSize: 13, color: '#60a5fa', marginBottom: 6 }}>🤖 AI Transparency Principle</div>
                 <div style={{ fontSize: 13, color: '#475569', lineHeight: 1.7 }}>
-                    VayuNetra does not claim its AI detects "fake news" with absolute accuracy.
+                    MausamDeBug does not claim its AI detects "fake news" with absolute accuracy.
                     Instead, the system <strong style={{ color: '#0f172a' }}>estimates the credibility of weather reports</strong> using spatial,
                     temporal, meteorological and multi-source evidence. Terms like <em>credibility, confidence, corroboration,</em> and
                     <em> anomaly</em> are used intentionally to reflect the probabilistic nature of the system.
@@ -82,7 +82,7 @@ export default function About() {
             {/* Disclaimer */}
             <div style={{ ...card, marginTop: 16, background: 'rgba(245,158,11,0.05)', borderColor: 'rgba(245,158,11,0.2)' }}>
                 <div style={{ fontSize: 12, color: '#475569', lineHeight: 1.7 }}>
-                    <strong style={{ color: '#f59e0b' }}>⚠️ Disclaimer:</strong> VayuNetra is an advanced technology demonstration.
+                    <strong style={{ color: '#f59e0b' }}>⚠️ Disclaimer:</strong> MausamDeBug is an advanced technology demonstration.
                     It is NOT an official Government of India or IMD product. API integrations with government sources
                     would require appropriate authorization in a production deployment.
                 </div>

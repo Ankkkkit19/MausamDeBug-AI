@@ -102,12 +102,12 @@ export default function Sidebar() {
             {/* Logo */}
             <div style={{ padding: '16px 12px', borderBottom: '1px solid rgba(0,0,0,0.08)', minHeight: 72 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                    <div style={{ width: 40, height: 40, borderRadius: 10, flexShrink: 0, background: 'linear-gradient(135deg, #3b82f6, #06b6d4)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <Wind size={20} color="white" />
+                    <div style={{ width: 40, height: 40, borderRadius: 10, flexShrink: 0, background: 'linear-gradient(135deg, #3b82f6, #06b6d4)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, color: '#fff', fontWeight: 'bold' }}>
+                        ☁️/&gt;
                     </div>
                     {sidebarOpen && (
                         <div>
-                            <div style={{ fontWeight: 700, fontSize: 15, color: '#0f172a', whiteSpace: 'nowrap' }}>VayuNetra</div>
+                            <div style={{ fontWeight: 700, fontSize: 15, color: '#0f172a', whiteSpace: 'nowrap' }}>MausamDeBug</div>
                             <div style={{ fontSize: 9, color: '#64748b', whiteSpace: 'nowrap' }}>Weather Intelligence</div>
                         </div>
                     )}

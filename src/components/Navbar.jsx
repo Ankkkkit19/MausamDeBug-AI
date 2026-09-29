@@ -38,8 +38,9 @@ export default function Navbar() {
         }}>
             {/* Brand + role */}
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, minWidth: 140 }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 24, height: 24, borderRadius: 6, background: 'linear-gradient(135deg, #3b82f6, #06b6d4)', color: '#fff', fontSize: 10, fontWeight: 'bold' }}>☁️/&gt;</div>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
-                    <span style={{ fontSize: 13, fontWeight: 700, color: '#0f172a', lineHeight: 1 }}>VayuNetra</span>
+                    <span style={{ fontSize: 13, fontWeight: 700, color: '#0f172a', lineHeight: 1 }}>MausamDeBug</span>
                     <span style={{ fontSize: 9, color: '#94a3b8', letterSpacing: '0.05em' }}>WEATHER INTELLIGENCE</span>
                 </div>
                 <div style={{

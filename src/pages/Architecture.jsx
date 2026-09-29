@@ -20,7 +20,7 @@ export default function Architecture() {
             <div style={{ marginBottom: 24 }}>
                 <h1 style={{ fontSize: 24, fontWeight: 800, color: '#0f172a', margin: 0 }}>System Architecture</h1>
                 <p style={{ color: '#64748b', fontSize: 13, marginTop: 4 }}>
-                    VayuNetra end-to-end data pipeline from raw sources to geospatial dashboard
+                    MausamDeBug end-to-end data pipeline from raw sources to geospatial dashboard
                 </p>
             </div>
 

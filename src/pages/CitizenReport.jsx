@@ -94,7 +94,7 @@ export default function CitizenReport() {
                     {/* AI processing steps */}
                     <div style={{ textAlign: 'left', marginBottom: 20 }}>
                         {[
-                            { icon: '✓', text: 'Report received by VayuNetra', done: true },
+                            { icon: '✓', text: 'Report received by MausamDeBug', done: true },
                             { icon: '🔤', text: 'NLP processing — extracting event info', done: true },
                             { icon: '🤖', text: 'AI credibility analysis running...', done: false },
                             { icon: '🗺️', text: 'Duplicate detection in progress...', done: false },

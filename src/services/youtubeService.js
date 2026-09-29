@@ -1,5 +1,5 @@
 /**
- * VayuNetra YouTube / Video Service
+ * MausamDeBug YouTube / Video Service
  * Mock data with real YouTube IDs. Backend can proxy YouTube Data API v3.
  */
 

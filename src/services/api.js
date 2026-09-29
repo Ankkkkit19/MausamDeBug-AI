@@ -1,5 +1,5 @@
 /**
- * VayuNetra Frontend API Service
+ * MausamDeBug Frontend API Service
  * All browser-side requests go through this module.
  * Falls back to mock data if the backend is unreachable.
  */

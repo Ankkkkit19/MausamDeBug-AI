@@ -5,8 +5,8 @@ import { Mail, Lock, ArrowRight, ShieldCheck, User } from 'lucide-react'
 
 // ── Credential presets ────────────────────────────────────────────────────────
 const ACCOUNTS = {
-    user: { email: 'user@vayunetra.in', password: 'user123', role: 'user' },
-    admin: { email: 'admin@vayunetra.in', password: 'admin123', role: 'admin' },
+    user: { email: 'user@mausamdebug.in', password: 'user123', role: 'user' },
+    admin: { email: 'admin@mausamdebug.in', password: 'admin123', role: 'admin' },
 }
 
 export default function Login() {
@@ -54,8 +54,8 @@ export default function Login() {
 
             {/* Logo top-left */}
             <div style={{ position: 'absolute', top: 32, left: 40, zIndex: 10, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 10 }} onClick={() => navigate('/')}>
-                <div style={{ width: 34, height: 34, borderRadius: 9, background: 'linear-gradient(135deg, #3b82f6, #06b6d4)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 17, boxShadow: '0 4px 12px rgba(59,130,246,0.3)' }}>🌬️</div>
-                <div style={{ fontWeight: 800, fontSize: 17, color: '#0f172a' }}>VayuNetra <span style={{ color: '#3b82f6' }}>AI</span></div>
+                <div style={{ width: 34, height: 34, borderRadius: 9, background: 'linear-gradient(135deg, #3b82f6, #06b6d4)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14, color: '#fff', fontWeight: 'bold', boxShadow: '0 4px 12px rgba(59,130,246,0.3)' }}>☁️/&gt;</div>
+                <div style={{ fontWeight: 800, fontSize: 17, color: '#0f172a' }}>MausamDeBug</div>
             </div>
 
             <div style={{ width: '100%', maxWidth: 460, position: 'relative', zIndex: 10 }}>
@@ -158,7 +158,7 @@ export default function Login() {
             </div>
 
             <div style={{ position: 'absolute', bottom: 24, width: '100%', textAlign: 'center', fontSize: 12, color: '#cbd5e1', zIndex: 0 }}>
-                VayuNetra AI © 2026
+                MausamDeBug © 2026
             </div>
         </div>
     )

@@ -1,5 +1,5 @@
 /**
- * VayuNetra Database Seeder
+ * MausamDeBug Database Seeder
  * Run: node seed.js
  * Seeds MongoDB with 150 realistic mock reports & correlated events.
  */

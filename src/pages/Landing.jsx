@@ -26,7 +26,7 @@ function AnimatedCounter({ target, suffix = '', prefix = '' }) {
 
 // ─── Testimonials Data ─────────────────────────────────────────────────────────
 const testimonials = [
-    { name: 'Riya Sharma', loc: 'Delhi', text: '"VayuNetra AI gives me accurate forecasts and alerts. It\'s now a part of my daily routine!"', stars: 5, avatar: '👩' },
+    { name: 'Riya Sharma', loc: 'Delhi', text: '"MausamDeBug gives me accurate forecasts and alerts. It\'s now a part of my daily routine!"', stars: 5, avatar: '👩' },
     { name: 'Arjun Verma', loc: 'Mumbai', text: '"The AI assistant is amazing! It feels like having a personal meteorologist in my pocket."', stars: 5, avatar: '👨' },
     { name: 'Neha Singh', loc: 'Noida', text: '"Timely alerts kept me stay prepared during unexpected weather changes. Highly recommended."', stars: 5, avatar: '👩‍💼' },
 ]
@@ -73,10 +73,10 @@ export default function Landing() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                     <div style={{
                         width: 36, height: 36, borderRadius: 10, background: 'linear-gradient(135deg,#3b82f6,#06b6d4)',
-                        display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18,
+                        display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, color: '#fff', fontWeight: 'bold',
                         boxShadow: '0 4px 15px rgba(59,130,246,0.4)',
-                    }}>🌬️</div>
-                    <span style={{ fontSize: 16, fontWeight: 800, color: '#fff', letterSpacing: '-0.02em' }}>VayuNetra <span style={{ color: '#3b82f6' }}>AI</span></span>
+                    }}>☁️/&gt;</div>
+                    <span style={{ fontSize: 16, fontWeight: 800, color: '#fff', letterSpacing: '-0.02em' }}>MausamDeBug</span>
                 </div>
 
                 {/* Nav Links */}
@@ -127,16 +127,16 @@ export default function Landing() {
                             🤖 AI-Powered Weather Intelligence
                         </div>
 
-                        <h1 style={{ fontSize: 62, fontWeight: 900, lineHeight: 1.08, letterSpacing: '-0.03em', marginBottom: 24, color: '#fff' }}>
-                            See the Weather.<br />
+                        <h1 style={{ fontSize: 56, fontWeight: 900, lineHeight: 1.08, letterSpacing: '-0.03em', marginBottom: 24, color: '#fff' }}>
+                            Understand Weather.<br />
+                            Decode Data.<br />
                             <span style={{ background: 'linear-gradient(90deg,#3b82f6,#06b6d4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-                                Understand
-                            </span><br />
-                            the Future.
+                                Act Smarter.
+                            </span>
                         </h1>
 
-                        <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, marginBottom: 40, maxWidth: 460 }}>
-                            VayuNetra AI is your intelligent weather companion, providing real-time conditions, hyper-local forecasts, AI insights, and timely alerts — all in one app.
+                        <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, marginBottom: 40, maxWidth: 520 }}>
+                            MausamDeBug is an AI-powered National Weather Big Data Analytics Platform that brings together weather information from multiple sources and transforms fragmented data into reliable, meaningful, and actionable intelligence.
                         </p>
 
                         {/* Store Badges */}
@@ -207,7 +207,7 @@ export default function Landing() {
                             A Smarter Way<br />to Stay Weather-Ready
                         </h2>
                         <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.55)', lineHeight: 1.7, marginBottom: 40 }}>
-                            VayuNetra AI combines real-time weather data, advanced AI models, and intelligent alerts to help you make better decisions, every day.
+                            MausamDeBug combines real-time weather data, advanced AI models, and intelligent alerts to help you make better decisions, every day.
                         </p>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
                             {[
@@ -256,7 +256,7 @@ export default function Landing() {
                         <div style={badgePill}>EXPLORE FEATURES</div>
                         <h2 style={{ fontSize: 44, fontWeight: 900, letterSpacing: '-0.03em', marginTop: 16, color: '#fff' }}>Everything You Need in One App</h2>
                         <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.5)', marginTop: 12, maxWidth: 600, margin: '12px auto 0' }}>
-                            From real-time weather to AI insights and event alerts — VayuNetra AI keeps you informed and prepared.
+                            From real-time weather to AI insights and event alerts — MausamDeBug keeps you informed and prepared.
                         </p>
                     </div>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24 }}>
@@ -367,7 +367,7 @@ export default function Landing() {
                 <div style={{ position: 'absolute', top: '20%', right: '15%', width: 250, height: 250, borderRadius: '50%', background: 'rgba(6,182,212,0.06)', filter: 'blur(60px)' }} />
                 <div style={{ position: 'relative', zIndex: 1 }}>
                     <h2 style={{ fontSize: 44, fontWeight: 900, letterSpacing: '-0.03em', marginBottom: 16, color: '#fff' }}>
-                        Download VayuNetra AI Today
+                        Download MausamDeBug Today
                     </h2>
                     <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.55)', marginBottom: 40, maxWidth: 500, margin: '0 auto 40px' }}>
                         Be informed. Be prepared. Stay ahead with AI-powered weather intelligence.
@@ -384,8 +384,8 @@ export default function Landing() {
                 <div style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 32 }}>
                     {/* Logo */}
                     <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                        <div style={{ width: 32, height: 32, borderRadius: 8, background: 'linear-gradient(135deg,#3b82f6,#06b6d4)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16 }}>🌬️</div>
-                        <span style={{ fontSize: 15, fontWeight: 800, color: '#fff' }}>VayuNetra <span style={{ color: '#3b82f6' }}>AI</span></span>
+                        <div style={{ width: 32, height: 32, borderRadius: 8, background: 'linear-gradient(135deg,#3b82f6,#06b6d4)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14, color: '#fff', fontWeight: 'bold' }}>☁️/&gt;</div>
+                        <span style={{ fontSize: 15, fontWeight: 800, color: '#fff' }}>MausamDeBug</span>
                     </div>
                     {/* Footer Nav */}
                     <div style={{ display: 'flex', gap: 24, fontSize: 12, color: 'rgba(255,255,255,0.45)', fontWeight: 500 }}>
@@ -401,7 +401,7 @@ export default function Landing() {
                     </div>
                 </div>
                 <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: 24, textAlign: 'center' }}>
-                    <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.25)' }}>See the Weather. Understand the Future. | © 2026 VayuNetra AI. All rights reserved.</p>
+                    <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.25)' }}>Debugging Weather. Delivering Intelligence. | © 2026 MausamDeBug. All rights reserved.</p>
                 </div>
             </footer>
         </div>
@@ -468,8 +468,8 @@ function PhoneMockup({ style, screen, navigate }) {
                     </div>
                     {/* Logo */}
                     <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 16 }}>
-                        <div style={{ width: 22, height: 22, borderRadius: 6, background: 'linear-gradient(135deg,#3b82f6,#06b6d4)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11 }}>🌬️</div>
-                        <span style={{ fontSize: 11, fontWeight: 800, color: '#fff' }}>VayuNetra AI</span>
+                        <div style={{ width: 22, height: 22, borderRadius: 6, background: 'linear-gradient(135deg,#3b82f6,#06b6d4)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 10, color: '#fff', fontWeight: 'bold' }}>☁️/&gt;</div>
+                        <span style={{ fontSize: 11, fontWeight: 800, color: '#fff' }}>MausamDeBug</span>
                     </div>
                     {/* Temp */}
                     <div style={{ textAlign: 'center', padding: '12px 0 16px', borderBottom: '1px solid rgba(255,255,255,0.07)', marginBottom: 12 }}>

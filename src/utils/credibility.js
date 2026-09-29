@@ -1,5 +1,5 @@
 /**
- * VayuNetra AI Credibility Engine
+ * MausamDeBug Credibility Engine
  * Formula: C = W·weather + N·nearby + G·geo + S·source + T·temporal
  * Weights are configurable (not hardcoded).
  */

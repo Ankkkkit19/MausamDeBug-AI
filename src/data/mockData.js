@@ -1,4 +1,4 @@
-// Mock data for VayuNetra - Realistic Indian weather events
+// Mock data for MausamDeBug - Realistic Indian weather events
 export const INDIAN_CITIES = [
     { name: 'Dehradun', state: 'Uttarakhand', lat: 30.3165, lng: 78.0322 },
     { name: 'Delhi', state: 'Delhi', lat: 28.6139, lng: 77.2090 },

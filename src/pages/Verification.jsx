@@ -16,7 +16,7 @@ export default function Verification() {
 
     return (
         <div style={{ padding: 24, maxWidth: 1200 }}>
-            <PageHeader title="AI Credibility Engine" subtitle="How VayuNetra estimates the trustworthiness of weather reports" />
+            <PageHeader title="AI Credibility Engine" subtitle="How MausamDeBug estimates the trustworthiness of weather reports" />
 
             {/* Formula card */}
             <div style={{ ...card, marginBottom: 20, background: 'linear-gradient(135deg, rgba(59,130,246,0.08), rgba(6,182,212,0.04))' }}>

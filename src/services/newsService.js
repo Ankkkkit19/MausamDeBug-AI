@@ -1,5 +1,5 @@
 /**
- * VayuNetra News Service
+ * MausamDeBug News Service
  * Returns rich mock data. Wire to NewsAPI via backend /api/news when key is available.
  */
 

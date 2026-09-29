@@ -1,5 +1,5 @@
 /**
- * VayuNetra Backend API Server
+ * MausamDeBug Backend API Server
  * Express + Mongoose — connects to MongoDB
  */
 require('dotenv').config();
@@ -24,7 +24,7 @@ mongoose.connect(process.env.MONGO_URI)
     });
 
 // ─── Health Check ─────────────────────────────────────────────────────────────
-app.get('/', (req, res) => res.json({ status: 'ok', service: 'VayuNetra API', version: '1.0.0' }));
+app.get('/', (req, res) => res.json({ status: 'ok', service: 'MausamDeBug API', version: '1.0.0' }));
 app.get('/api/health', (req, res) => {
     const dbState = ['disconnected', 'connected', 'connecting', 'disconnecting'][mongoose.connection.readyState] ?? 'unknown';
     res.json({ status: 'ok', db: dbState, timestamp: new Date().toISOString() });
@@ -128,7 +128,7 @@ app.get('/api/stats', async (req, res) => {
 
 // ─── Start ────────────────────────────────────────────────────────────────────
 app.listen(PORT, () => {
-    console.log(`🚀 VayuNetra API running at http://localhost:${PORT}`);
+    console.log(`🚀 MausamDeBug API running at http://localhost:${PORT}`);
     console.log(`   Health: http://localhost:${PORT}/api/health`);
     console.log(`   Reports:http://localhost:${PORT}/api/reports`);
     console.log(`   Events: http://localhost:${PORT}/api/events`);
