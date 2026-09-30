@@ -6,6 +6,7 @@ import { useEffect } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import DemoModePanel from './DemoModePanel'
 import SOSSystem from './SOSSystem'
+import MausamAI from './MausamAI'
 
 export default function AppLayout() {
     const { demoMode, wsConnected, setWsConnected, addReport, addNotification, stats, loadData } = useAppStore()
@@ -95,6 +96,7 @@ export default function AppLayout() {
             {demoMode && <DemoModePanel />}
             <Toaster position="bottom-right" />
             <SOSSystem isMobile={true} />
+            <MausamAI isMobile={window.innerWidth < 768} />
         </div>
     )
 }

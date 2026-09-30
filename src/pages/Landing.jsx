@@ -274,6 +274,7 @@ export default function Landing() {
 
             {/* FLOATING SOS ON MOBILE */}
             <SOSSystem isMobile={true} />
+            <MausamAI isMobile={window.innerWidth < 768} />
         </div>
     );
 }
