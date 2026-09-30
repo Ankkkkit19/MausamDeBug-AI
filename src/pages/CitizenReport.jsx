@@ -71,7 +71,7 @@ export default function CitizenReport() {
                 has_image: false,
                 duplicate_group: null,
             }
-            addReport(newReport)
+            addReport(newReport).then(saved => setSubmittedId(saved?.id || id))
             setSubmittedId(id)
             setSubmitted(true)
             setLoading(false)
