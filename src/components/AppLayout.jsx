@@ -6,9 +6,11 @@ import { useEffect } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import DemoModePanel from './DemoModePanel'
 import SOSSystem from './SOSSystem'
-import MausamAI from './MausamAI'
+import MausamAI from './MausamAI';
+import useIsMobile from '../hooks/useIsMobile'
 
 export default function AppLayout() {
+    const isMobile = useIsMobile();
     const { demoMode, wsConnected, setWsConnected, addReport, addNotification, stats, loadData } = useAppStore()
 
     // Bootstrap: load data from MongoDB API (fallback to mock)
@@ -96,7 +98,7 @@ export default function AppLayout() {
             {demoMode && <DemoModePanel />}
             <Toaster position="bottom-right" />
             <SOSSystem isMobile={true} />
-            <MausamAI isMobile={window.innerWidth < 768} />
+            <MausamAI isMobile={isMobile} />
         </div>
     )
 }

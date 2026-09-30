@@ -5,7 +5,7 @@ import {
     Search, Bell, Play, Square, RefreshCw,
     AlertTriangle, CheckCircle, Info, User, Shield
 } from 'lucide-react'
-import SOSSystem from './SOSSystem'
+
 
 export default function Navbar() {
     const navigate = useNavigate()
@@ -77,7 +77,7 @@ export default function Navbar() {
             <div style={{ flex: 1 }} />
 
             {/* SOS System */}
-            <SOSSystem isMobile={false} />
+
 
             {/* Live status badge */}
             <div style={{
